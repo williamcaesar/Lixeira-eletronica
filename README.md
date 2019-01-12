@@ -1,2 +1,2 @@
-# Lixeira-eletronic
-Este é um projeto de automação para lixeiras
+# Lixeira-eletronica
+Este é um projeto de automação para lixeiras utilizando uma raspberrypi 3 com o telegram
