@@ -6,10 +6,15 @@ from stub_rpi import GPIO
 import time, datetime
 import telepot
 
+
+
 class Bot:
     def __init__(self):
         self.now = datetime.datetime.now()
         print(self.now)
+
+        import telegram_auth
+        self.token = telegram_auth.token
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(17, GPIO.OUT)
@@ -38,7 +43,7 @@ class Bot:
             self.pwm.stop()
 
     def run(self):
-        telegram_bot = telepot.Bot('762116557:AAF6pleFdhAmaDIDaz4u4dFEIxebbPTFkd4')
+        telegram_bot = telepot.Bot(str("\'{}\'".format(self.token)))
         print (telegram_bot.getMe())
 
         MessageLoop(telegram_bot, self.action).run_as_thread()
